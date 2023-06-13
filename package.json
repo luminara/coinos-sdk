@@ -2,10 +2,17 @@
   "name": "coinos",
   "version": "1.0.0",
   "description": "Node.js client for the Coinos API.",
-  "main": "lib/src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.m.js",
+  "unpkg": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "require": "./dist/index.js",
+    "default": "./dist/index.modern.js"
+  },
   "scripts": {
-    "build": "tsc",
-    "test": "node lib/test/app.js"
+    "build": "rm -rf dist && microbundle --tsconfig tsconfig.json --no-sourcemap",
+    "dev": "microbundle --watch --tsconfig tsconfig.json --no-sourcemap"
   },
   "repository": {
     "type": "git",
@@ -23,10 +30,13 @@
   },
   "homepage": "https://github.com/SubashIsHere/coinos-sdk#readme",
   "dependencies": {
-    "axios": "^0.26.1"
+    "typescript": "^4.6.3"
   },
   "devDependencies": {
     "@types/node": "^17.0.23",
-    "typescript": "^4.6.3"
-  }
+    "microbundle": "^0.15.1"
+  },
+  "files": [
+    "dist"
+  ]
 }

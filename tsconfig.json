@@ -1,25 +1,15 @@
 {
   "compilerOptions": {
-    "lib": ["ES6"],
-    "outDir": "lib",
-    "removeComments": false,
-    "target": "ES6",
     "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es5",
+    "sourceMap": false,
+    "outDir": "dist",
     "baseUrl": "./",
-    "esModuleInterop": false,
-    "moduleResolution": "node",
-    "paths": {},
-    "sourceMap": true,
-    "sourceRoot": "/",
-    "alwaysStrict": true,
-    "allowUnreachableCode": false,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "noImplicitReturns": true,
-    "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "incremental": true
   },
-  "include": ["./**/*.ts"],
-  "exclude": ["node_modules/**/*"]
+  "include": ["."],
+  "exclude": ["node_modules", "test", "coinos.ts", "dist"]
 }
